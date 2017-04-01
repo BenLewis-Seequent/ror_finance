@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'finance/index'
+  get 'finance', to: 'finance#index'
+  get 'finance/now', to: 'finance#now'
+
+  post 'finance', to: 'finance#update'
 
   resources :stocks
 

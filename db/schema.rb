@@ -12,11 +12,24 @@
 
 ActiveRecord::Schema.define(version: 20170330075721) do
 
-  create_table "stocks", force: :cascade do |t|
-    t.string   "company"
-    t.string   "price"
+  create_table "error", force: :cascade do |t|
+    t.text     "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stock", force: :cascade do |t|
+    t.string   "company"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stock_price", force: :cascade do |t|
+    t.string   "price"
+    t.integer  "stock_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stock_id"], name: "index_stock_price_on_stock_id"
   end
 
 end

@@ -1,9 +1,38 @@
 <h1>Stocks</h1>
+<div>
+  <button onclick="begin_recording()">
+    Begin Recording
+  </button>
+  <button onclick="end_recording()">
+    End Recording
+  </button>
+  <a href="/finance/now">
+    <button>
+      Stocks Now
+    </button>
+  </a>
+</div>
 <ul>
   <% @stocks.each do |stock| %>
       <li>
         <p><%= stock.company %></p><br/>
-        <p><%= stock.price %></p>
+        <ol>
+          <% stock.last_prices(5).each do |price| %>
+          <li>
+            <p><%= price.created_at %>: <%= price.price %></p><br/>
+          </li>
+          <% end %>
+        </ol>
       </li>
   <% end %>
 </ul>
+<div>
+  Errors
+  <ol>
+    <% @errors.each do |error| %>
+        <li>
+          <p><%= error.created_at %>: <%= error.message %></p><br/>
+        </li>
+    <% end %>
+  </ol>
+</div>

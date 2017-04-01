@@ -1,9 +1,5 @@
-require 'net/http'
-require 'rexml/document'
-require 'rexml/xpath'
-require 'rexml/xpath_parser'
+require 'pstore'
 
-include REXML
 namespace :stock do
   desc "Fetches stack prices"
   task fetch: :environment do

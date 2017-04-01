@@ -2,10 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-li > p {
-  margin: 0 0;
+li > ol, li > p {
+  margin: 0;
 }
 
-li {
+ul > li {
   padding: 20px 0;
 }
+

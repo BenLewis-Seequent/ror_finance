@@ -1,3 +1,20 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+window.begin_recording = () -> $.ajax(
+  method: 'POST',
+  url: '/finance',
+  dataType: 'json',
+  data: {
+    recording: true
+  }
+)
+
+window.end_recording = () -> $.ajax(
+  method: 'POST',
+  url: '/finance',
+  dataType: 'json',
+  data: {
+    recording: false
+  }
+)
