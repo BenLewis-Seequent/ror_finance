@@ -14,6 +14,7 @@ gem 'sqlite3'
 gem 'puma', '~> 3.0'
 
 gem 'sidekiq'
+gem 'whenever'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
